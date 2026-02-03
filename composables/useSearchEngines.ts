@@ -110,6 +110,52 @@ export const useSearchEngines = () => {
         text: '#222222',
         border: '#d0d0d0'
       }
+    },
+    {
+      id: 'yahoo',
+      name: 'Yahoo',
+      displayName: 'Yahoo',
+      searchUrl: 'https://search.yahoo.com/search?p=',
+      placeholder: 'Search the web',
+      buttonText: 'Search',
+      snarkyMessages: [
+        'Yahoo! You could have done that yourself.',
+        'Next time, search it on your own.',
+        'You just made me do your searching for you.',
+        'Was clicking a search button too much work?',
+        'Try searching yourself next time.',
+        'That\'s all you needed to do!'
+      ],
+      colors: {
+        primary: '#5f01d1',
+        hover: '#4a00a8',
+        background: '#ffffff',
+        text: '#000000',
+        border: '#d0d0d0'
+      }
+    },
+    {
+      id: 'startpage',
+      name: 'Startpage',
+      displayName: 'Startpage',
+      searchUrl: 'https://www.startpage.com/do/search?q=',
+      placeholder: 'Search privately',
+      buttonText: 'Search',
+      snarkyMessages: [
+        'Private searching isn\'t hard to do yourself.',
+        'Next time, protect your privacy by searching yourself.',
+        'You could have done this privately on your own.',
+        'Was searching privately too complicated?',
+        'Try using Startpage yourself next time.',
+        'That\'s how easy private searching is!'
+      ],
+      colors: {
+        primary: '#1a73e8',
+        hover: '#1557b0',
+        background: '#ffffff',
+        text: '#000000',
+        border: '#d0d0d0'
+      }
     }
   ]
 

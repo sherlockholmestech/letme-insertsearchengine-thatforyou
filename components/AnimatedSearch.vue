@@ -70,15 +70,15 @@ const animateCursorToButton = async () => {
   // Start cursor off screen (left side)
   cursorPosition.value = { x: 50, y: window.innerHeight / 2 }
   
-  await new Promise(resolve => setTimeout(resolve, 300))
+  await new Promise(resolve => setTimeout(resolve, 500))
   
   // Animate cursor to button center
   // The cursor tip is at the top-left of the SVG, so we need to position it there
   const targetX = buttonRect.left + buttonRect.width / 2
   const targetY = buttonRect.top + buttonRect.height / 2
   
-  // Smooth animation with more steps for slower movement
-  const steps = 40
+  // Smooth animation with even more steps for much slower movement
+  const steps = 60
   const startX = cursorPosition.value.x
   const startY = cursorPosition.value.y
   const deltaX = (targetX - startX) / steps
@@ -89,41 +89,41 @@ const animateCursorToButton = async () => {
       x: startX + deltaX * (i + 1),
       y: startY + deltaY * (i + 1)
     }
-    await new Promise(resolve => setTimeout(resolve, 30))
+    await new Promise(resolve => setTimeout(resolve, 40))
   }
   
   // Wait a moment at the button
-  await new Promise(resolve => setTimeout(resolve, 300))
+  await new Promise(resolve => setTimeout(resolve, 500))
   
   // Click animation
   cursorClicking.value = true
   buttonClicked.value = true
-  await new Promise(resolve => setTimeout(resolve, 200))
+  await new Promise(resolve => setTimeout(resolve, 300))
   cursorClicking.value = false
 }
 
 const startAnimation = async () => {
   // Initial delay
-  await new Promise(resolve => setTimeout(resolve, 500))
+  await new Promise(resolve => setTimeout(resolve, 800))
 
-  // Typing animation - 100ms per character
+  // Typing animation - much slower at 200ms per character
   for (let i = 0; i <= props.query.length; i++) {
     currentText.value = props.query.substring(0, i)
-    await new Promise(resolve => setTimeout(resolve, 100))
+    await new Promise(resolve => setTimeout(resolve, 200))
   }
 
   // Wait after typing completes
-  await new Promise(resolve => setTimeout(resolve, 300))
+  await new Promise(resolve => setTimeout(resolve, 500))
 
   // Hide text cursor
   showCursor.value = false
-  await new Promise(resolve => setTimeout(resolve, 200))
+  await new Promise(resolve => setTimeout(resolve, 400))
 
   // Animate cursor to button and click
   await animateCursorToButton()
 
-  // Wait after click (500ms as specified)
-  await new Promise(resolve => setTimeout(resolve, 500))
+  // Wait after click
+  await new Promise(resolve => setTimeout(resolve, 700))
 
   // Hide cursor
   cursorPosition.value = { x: -100, y: -100 }
@@ -131,8 +131,8 @@ const startAnimation = async () => {
   // Show snarky message
   showMessage.value = true
 
-  // Wait 1 second with message visible
-  await new Promise(resolve => setTimeout(resolve, 1000))
+  // Wait 1.5 seconds with message visible
+  await new Promise(resolve => setTimeout(resolve, 1500))
 
   // Redirect to actual search engine
   const searchUrl = `${props.engine.searchUrl}${encodeURIComponent(props.query)}`

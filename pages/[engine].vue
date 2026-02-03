@@ -46,6 +46,10 @@ const getBackgroundClass = (id: string) => {
       return 'bg-white dark:bg-gray-900'
     case 'ecosia':
       return 'bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800'
+    case 'yahoo':
+      return 'bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800'
+    case 'startpage':
+      return 'bg-gradient-to-br from-blue-50 to-gray-50 dark:from-gray-900 dark:to-gray-800'
     default:
       return 'bg-white dark:bg-gray-900'
   }

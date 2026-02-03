@@ -73,7 +73,7 @@
         <!-- Info Section -->
         <div class="mt-12 text-center">
           <p class="text-gray-600 dark:text-gray-400">
-            Works with Google, Bing, DuckDuckGo, and Ecosia
+            Works with Google, Bing, DuckDuckGo, Ecosia, Yahoo, and Startpage
           </p>
         </div>
       </div>

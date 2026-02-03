@@ -141,6 +141,69 @@
       </div>
     </div>
   </div>
+
+  <!-- Yahoo Style -->
+  <div v-else-if="engine.id === 'yahoo'" class="w-full max-w-4xl mx-auto">
+    <!-- Yahoo Logo -->
+    <div class="text-left mb-8">
+      <div class="text-5xl font-bold text-[#5f01d1]">
+        Yahoo
+      </div>
+    </div>
+    
+    <!-- Yahoo Search Bar -->
+    <div class="relative mb-6">
+      <div class="flex items-center bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-300 dark:border-gray-600 w-full">
+        <div class="flex-1 flex items-center px-4 py-3 min-w-0">
+          <div class="flex-1 text-base text-gray-900 dark:text-gray-100">
+            <span>{{ currentText }}</span>
+            <span v-if="showCursor" class="inline-block w-0.5 h-5 bg-[#5f01d1] animate-cursor-blink ml-0.5"></span>
+          </div>
+        </div>
+        <button
+          ref="searchButton"
+          :class="['px-8 py-3 bg-[#5f01d1] hover:bg-[#4a00a8] text-white font-semibold transition-all flex-shrink-0', buttonClicked ? 'scale-95' : '']"
+        >
+          {{ engine.buttonText }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Startpage Style -->
+  <div v-else-if="engine.id === 'startpage'" class="w-full max-w-4xl mx-auto">
+    <!-- Startpage Logo -->
+    <div class="text-center mb-8">
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <div class="w-10 h-10 rounded-full bg-[#1a73e8] flex items-center justify-center text-white text-xl font-bold">
+          S
+        </div>
+        <div class="text-3xl font-semibold text-gray-800 dark:text-gray-200">Startpage</div>
+      </div>
+      <p class="text-sm text-gray-600 dark:text-gray-400">The world's most private search engine</p>
+    </div>
+    
+    <!-- Startpage Search Bar -->
+    <div class="relative mb-6">
+      <div class="flex items-center bg-white dark:bg-gray-800 rounded-lg shadow-lg border-2 border-gray-300 dark:border-gray-600 overflow-hidden w-full">
+        <div class="flex-1 flex items-center px-4 py-3 min-w-0">
+          <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <div class="flex-1 text-base text-gray-900 dark:text-gray-100">
+            <span>{{ currentText }}</span>
+            <span v-if="showCursor" class="inline-block w-0.5 h-5 bg-[#1a73e8] animate-cursor-blink ml-0.5"></span>
+          </div>
+        </div>
+        <button
+          ref="searchButton"
+          :class="['px-8 py-3 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-semibold transition-all flex-shrink-0', buttonClicked ? 'scale-95' : '']"
+        >
+          {{ engine.buttonText }}
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">

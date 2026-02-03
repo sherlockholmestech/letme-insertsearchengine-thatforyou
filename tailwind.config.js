@@ -3,6 +3,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif']
+      },
       colors: {
         google: {
           primary: '#4285f4',
@@ -19,6 +22,14 @@ module.exports = {
         ecosia: {
           primary: '#56b68b',
           hover: '#4a9d77'
+        },
+        yahoo: {
+          primary: '#5f01d1',
+          hover: '#4a00a8'
+        },
+        startpage: {
+          primary: '#1a73e8',
+          hover: '#1557b0'
         }
       },
       animation: {
